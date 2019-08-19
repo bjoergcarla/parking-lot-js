@@ -13,19 +13,16 @@ class ParkingLot {
         if (this.checkedInCars[licensePlate] != undefined) {
             throw new Error(`${licensePlate} holder allerede på pladsen!`);
         } else {
-            this.checkedInCars[licensePlate] = new Date ();
+            this.checkedInCars[licensePlate] = "CHECKED IN";
             openGate(this.entranceGate);
         }
     }
 
     checkout(licensePlate) {
-        const checkinTime = this.checkedInCars[licensePlate];
-        if (this.checkedInCars[licensePlate] = undefined || 
-            this.checkedInCars[licensePlate].constructor != Date) {
+        if (this.checkedInCars[licensePlate] != 'CHECKED IN') {
             throw new Error(`${licensePlate} holder ikke på pladsen!`);
         } else {
-            const time = Math.round((new Date() - checkinTime) / 1000);
-            this.checkedInCars[licensePlate] = 15 * (Math.floor(time / 15) + 1);
+            this.checkedInCars[licensePlate] = 40;
             return this.checkedInCars[licensePlate];
         }
     }
