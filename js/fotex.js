@@ -1,5 +1,7 @@
+const system = 'Føtex';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const parkingLot = new ParkingLot();
+    const parkingLot = new ParkingLot(15);
 
     const checkin = document.getElementById('entrance-gate');
     const checkout = document.getElementById('exit-gate');
